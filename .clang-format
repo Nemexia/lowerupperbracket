@@ -1,0 +1,28 @@
+BasedOnStyle: Google
+
+# Density / readability
+IndentWidth: 4
+ColumnLimit: 120
+UseTab: Never
+
+# Modern C++ idioms
+PointerAlignment: Left
+ReferenceAlignment: Left
+Cpp11BracedListStyle: true
+
+# Braces
+BreakBeforeBraces: Allman
+
+# Control flow readability
+AllowShortIfStatementsOnASingleLine: false
+AllowShortLoopsOnASingleLine: false
+AllowShortFunctionsOnASingleLine: Empty
+
+# Includes
+SortIncludes: true
+IncludeBlocks: Regroup
+
+# Misc
+AccessModifierOffset: -2
+AlignTrailingComments: true
+MaxEmptyLinesToKeep: 1

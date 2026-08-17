@@ -14,6 +14,8 @@ add_executable(lowerupperbracket
   src/main.cpp
   src/player.hpp
   src/match.hpp
+  src/helper.hpp
+  src/helper.cpp
   src/layer.hpp
 )
 

@@ -46,15 +46,28 @@ void print_population_stats(const std::vector<Player>& players)
 Layer make_initial_layer(std::vector<Player>& players)
 {
     Layer layer;
+    layer.upper_bracket.reserve(players.size() / 2);
+
     for (int i = 0; i < players.size(); i += 2)
     {
         layer.upper_bracket.emplace_back(&players[i], &players[i + 1]);
     }
+
     return layer;
 }
 
-Layer get_next_layer(const Layer& layer)
+Layer get_next_layer(Layer& this_layer)
 {
     Layer next_layer;
+    next_layer.upper_bracket.resize(this_layer.upper_bracket.size() / 2);
+    next_layer.lower_bracket.resize(this_layer.upper_bracket.size() / 2);
+
+    for (int i = 0; i < this_layer.upper_bracket.size(); ++i)
+    {
+        this_layer.upper_bracket[i].winner_match = &next_layer.upper_bracket[i / 2];
+        this_layer.upper_bracket[i].loser_match = &next_layer.lower_bracket[i / 2];
+        this_layer.lower_bracket[i].winner_match = &next_layer.lower_bracket[i / 2];
+    }
+
     return next_layer;
 }

@@ -12,4 +12,4 @@ void print_population_stats(const std::vector<Player>& players);
 
 Layer make_initial_layer(std::vector<Player>& players);
 
-Layer get_next_layer(const Layer& layer);
+Layer get_next_layer(Layer& this_layer);

@@ -13,5 +13,6 @@ project(lowerupperbracket
 add_executable(lowerupperbracket
   src/main.cpp
   src/player.hpp
+  src/match.hpp
 )
 
